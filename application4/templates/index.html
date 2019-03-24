@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Page</title>
+</head>
+<body>
+    <form action="form-handler/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        login <input type="text">
+        pass <input type="password">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
