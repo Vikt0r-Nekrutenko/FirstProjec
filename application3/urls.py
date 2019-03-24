@@ -13,13 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+from typing import List, Any
+
+from django.conf.urls import url
 from django.urls import path, include
+from . import views
+
+new_patterns = [
+    url(r'^comments/$', views.get_comment),
+    url(r'^comments/(?P<comment_number>\d+)/$', views.get_comment),
+]
+
+action_patterns = [
+    path('edit/', views.edit),
+    path('delete/', views.delete),
+    path('answer/', views.answer),
+]
 
 urlpatterns = [
-    path('Application1/', include('Application1.urls')),
-    path('application1/', include('application1.urls')),
-    path('application2/', include('application2.urls')),
-    path('application3/', include('application3.urls')),
-    path('admin/', admin.site.urls),
+    url(r'^review/page-(?P<page_number>[1-9][\d]{0,})/$', views.get_page),
+    url('new_patterns/', include(new_patterns)),
+    url(r'product/review/page-(?P<page_number>[1-9][\d]{0,})/', include(action_patterns)),
 ]
+
