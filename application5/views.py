@@ -12,7 +12,16 @@ def index(request):
             'nickname': 'grhin0',
             'phone': '380(93)00-16-140',
             'email': 'vikt0r.nekrut@outlook.com',
-        }
+        },
     }
     return render(request, 'index.html', context)
 
+def condition(request):
+    context = {
+        'days': [1, 2, 3, 4, 5, 6, 7],
+        'current_user': 'admin',
+        'day': 3,
+        'status': 'online',
+        'email': 'fffwww@gmail.com',
+    }
+    return render(request, 'condition.html', context)

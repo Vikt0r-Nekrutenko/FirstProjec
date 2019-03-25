@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <table border="1">
+        <tr>
+            <td>User</td>
+            {%if current_user == 'admin' %}
+            <td>you entered how {{current_user}}</td>
+            {%endif%}
+        </tr>
+        <tr>
+            <td>Activity</td>
+            {% if days %}
+                <td>
+                {% for d in days %}
+                    {{d}}
+                {%endfor%}
+                </td>
+            {%endif%}
+        </tr>
+        <tr>
+            <td>Day of week</td>
+            {% if day == 1%}
+            <td>Sunday</td>
+            {%elif day == 2%}
+            <td>Monday</td>
+            {%elif day == 3%}
+            <td>Tuesday</td>
+            {%elif day == 4%}
+            <td>Wednesday</td>
+            {%elif day == 5%}
+            <td>Thursday</td>
+            {%elif day == 6%}
+            <td>Friday</td>
+            {%elif day == 7%}
+            <td>Saturday</td>
+            {%endif%}
+        </tr>
+        <tr>
+            <td>Work days</td>
+            {%if day <= 5%}
+            <td>work day</td>
+            {%else%}
+            <td>weekend</td>
+            {%endif%}
+        </tr>
+        <tr>
+            <td>Status</td>
+            {%if status == 'online'%}
+            <td style="color:green;">user online</td>
+            {%else%}
+            <td style="color:red;">user offline</td>
+            {%endif%}
+        </tr>
+        <tr>
+            <td>Additional</td>
+            {%if 'gmail.com' in email%}
+            <td><a href="https://mail.google.com/mail/">Gmail</a></td>
+            {%endif%}
+        </tr>
+    </table>
+</head>
+<body>
+
+</body>
+</html>

@@ -19,4 +19,5 @@ from . import views
 
 urlpatterns = [
     path('user/', views.index),
+    path('condition/', views.condition),
 ]
