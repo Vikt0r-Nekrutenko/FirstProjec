@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application 5</title>
+</head>
+<body>
+    <ol class="variable">
+        <li>Year : {{job_year.2}}</li>
+        <li>Name : {{name}}</li>
+        <li>Lastname : {{lastname}}</li>
+        <li>Nickname : {{contact.nickname|capfirst}}</li>
+        <li>Contact active for : {{job_year.2|add:5}}</li>
+        <li>Current date : {% now 'SHORT_DATETIME_FORMAT'%}</li>
+        <li>Job start : {{job_year.0}}</li>
+        <li>Code : {{contact.phone|slice:"0:3"}} Phone : {{contact.phone|slice:"3:"}}</li>
+    </ol>
+</body>
+</html>

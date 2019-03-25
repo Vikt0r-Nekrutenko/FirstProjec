@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'application2.apps.Application2Config',
     'application3.apps.Application3Config',
     'application4.apps.Application4Config',
+    'application5.apps.Application5Config',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'FirstProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['application5/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

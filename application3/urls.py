@@ -31,7 +31,7 @@ action_patterns = [
 ]
 
 urlpatterns = [
-    url(r'^review/page-(?P<page_number>[1-9][\d]{0,})/$', views.get_page),
+    url(r'^review/page-(?:<page_number>[1-9][\d]{0,})/$', views.get_page),
     url('new_patterns/', include(new_patterns)),
     url(r'product/review/page-(?P<page_number>[1-9][\d]{0,})/', include(action_patterns)),
 ]
