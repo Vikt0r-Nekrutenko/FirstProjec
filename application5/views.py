@@ -25,3 +25,12 @@ def condition(request):
         'email': 'fffwww@gmail.com',
     }
     return render(request, 'condition.html', context)
+
+def menu(request):
+    return render(request, 'menu.html')
+
+def content(request):
+    return render(request, 'content.html')
+
+def wrapper(request):
+    return render(request, 'wrapper.html')

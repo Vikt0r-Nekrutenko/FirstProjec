@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <style>
+        header {
+                width: 100%;
+                background-color: green;
+               }
+        footer {
+                float: left;
+                width: 100%;
+                background-color: blue;
+               }
+        section {
+                 float: left;
+                 width: 35%;
+                 background-color: red;
+                }
+        aside {
+               float: right;
+               width: 65%;
+               background-color: yellow;
+              }
+        body {
+                margin: 0px;
+             }
+    </style>
+</head>
+<body>
+    <header>
+        {%block header%}Header{%endblock%}
+    </header>
+    <section>
+        {%block content%}Шаблон головної сторінки{%endblock%}
+    </section>
+    <aside>
+        {% include "menu.html" %}
+    </aside>
+    <footer>
+        {%block footer%}Footer{%endblock%}
+    </footer>
+</body>
+</html>
