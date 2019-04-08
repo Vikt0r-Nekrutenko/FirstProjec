@@ -34,3 +34,6 @@ def content(request):
 
 def wrapper(request):
     return render(request, 'wrapper.html')
+
+def show_name(request):
+    return HttpResponse('application5')
