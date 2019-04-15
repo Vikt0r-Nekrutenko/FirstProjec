@@ -28,6 +28,7 @@ class Human(models.Model):
     company = models.CharField(max_length=150, choices=IT_COMPANY)
     position = models.CharField(max_length=15, choices=IT_POSITION)
     language = models.CharField(max_length=10, choices=IT_LANG, default=IT_LANG[0])
+    #salary = models.IntegerField()
 
     def __str__(self):
         return "Фамилия: %s Имя: %s Компания: %s" % (self.name, self.surname, self.company)

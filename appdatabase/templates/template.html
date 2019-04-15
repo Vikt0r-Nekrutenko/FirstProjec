@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Всі елементи типу Human </h1>
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Компания</td>
+        </tr>
+        {% for hum in humans %}
+        <tr>
+            <td>{{hum.surname}}</td>
+            <td>{{hum.name}}</td>
+            <td>{{hum.company}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+<h1>Перших три працівника</h1>
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Компания</td>
+        </tr>
+        {% for hum in 3humansa %}
+        <tr>
+            <td>{{hum.surname}}</td>
+            <td>{{hum.name}}</td>
+            <td>{{hum.company}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+<h1>Працівників тільки першої компанії</h1>
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Компания</td>
+        </tr>
+        {% for hum in first_company %}
+        <tr>
+            <td>{{hum.surname}}</td>
+            <td>{{hum.name}}</td>
+            <td>{{hum.company}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+<h1>Працівників народжених у 2000 році</h1>
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Компания</td>
+        </tr>
+        {% for hum in 2000year %}
+        <tr>
+            <td>{{hum.surname}}</td>
+            <td>{{hum.name}}</td>
+            <td>{{hum.company}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+<h1>Першого доданого працівника</h1>
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Компания</td>
+        </tr>
+        <tr>
+            <td>{{first_added.surname}}</td>
+            <td>{{first_added.name}}</td>
+            <td>{{first_added.company}}</td>
+        </tr>
+    </table>
+
+<h1>Працівників впорядкованих по даті народження по спаданню</h1>
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Компания</td>
+        </tr>
+        {% for hum in ord_by_desc_date %}
+        <tr>
+            <td>{{hum.surname}}</td>
+            <td>{{hum.name}}</td>
+            <td>{{hum.company}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+<h1>Працівникiв з NEконкретним іменем</h1>
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Компания</td>
+        </tr>
+        {% for hum in incorrect_name %}
+        <tr>
+            <td>{{hum.surname}}</td>
+            <td>{{hum.name}}</td>
+            <td>{{hum.company}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+
+    <form action="form-handler/" method="post">
+        {% csrf_token %}
+        {{ form }}
+        login <input type="text">
+        pass <input type="password">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

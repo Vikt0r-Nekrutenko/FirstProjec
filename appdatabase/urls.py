@@ -18,5 +18,6 @@ from django.urls import path, include
 from . import  views
 
 urlpatterns = [
-    path('', views.show)
+    path('', views.List.as_view()),
+    path('form-handler/', views.show_method),
 ]
