@@ -6,7 +6,7 @@ class Example(models.Model):
     int_field                    = models.IntegerField
     positive_int_field           = models.PositiveIntegerField
     positiver_small_int_field    = models.PositiveSmallIntegerField
-    big_int_field                = models.BigIntegerField
+    big_int_field                = models.BigIntegerField(default=10)
     float_field                  = models.FloatField
     binary_field                 = models.BinaryField
     boolean_field                = models.BooleanField
