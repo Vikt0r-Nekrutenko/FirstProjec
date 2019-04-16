@@ -19,5 +19,5 @@ from . import  views
 
 urlpatterns = [
     path('', views.List.as_view()),
-    path('form-handler/', views.show_method),
+    path('form-handler/', views.List.as_view())
 ]

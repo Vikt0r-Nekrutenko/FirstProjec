@@ -5,6 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<h1>qweqwe</h1>
+    <h1>Ваш запрос: {{txt}}</h1>
+    {% if search %}
+    <table border="1">
+        <tr style="font-weight:bold">
+            <td>Компания</td>
+        </tr>
+        {% for hum in search %}
+        <tr>
+            <td>{{hum}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+    {% else %}
+        <h1>Nichego net!</h1>
+    {%endif%}
 </body>
 </html>
