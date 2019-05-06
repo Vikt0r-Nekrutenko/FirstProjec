@@ -20,7 +20,7 @@ class List(TemplateView):
         '2000year': models.Human.objects.filter(birth__gte='2000-01-01', birth__lte='2001-12-31'),
         'first_added': models.Human.objects.all()[0],
         'ord_by_desc_date': models.Human.objects.order_by("-birth"),
-        'incorrect_name': models.Human.objects.filter(name__regex=r'[\d+?\s+?]'),
+        'incorrect_name': models.Human.objects.filter(name__regex=r'[\d+?\s+?]').distinct(),
         'form': MyForm(),
     }
 
